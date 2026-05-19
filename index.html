@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio — Wasry Rusianti Nomira Silla, S.K.H.</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600&family=Inconsolata:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════════
+   TOKENS
+══════════════════════════════════════════ */
+:root {
+  --ink:       #1C1C1A;
+  --parchment: #F8F4EE;
+  --cream:     #F2EDE4;
+  --forest:    #1E3A2F;
+  --moss:      #3D6B52;
+  --fern:      #5E9974;
+  --gold:      #C49A3C;
+  --amber:     #E2A84B;
+  --rust:      #A8522A;
+  --sand:      #D9C9A8;
+  --mist:      #E8EFE9;
+  --white:     #FFFFFF;
+}
+
+/* ══════════════════════════════════════════
+   RESET & BASE
+══════════════════════════════════════════ */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--parchment);
+  color:var(--ink);
+  font-family:'Outfit',sans-serif;
+  font-weight:300;
+  line-height:1.65;
+  overflow-x:hidden;
+}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+
+/* ══════════════════════════════════════════
+   TYPOGRAPHY HELPERS
+══════════════════════════════════════════ */
+.serif{font-family:'Cormorant Garamond',serif}
+.mono{font-family:'Inconsolata',monospace}
+.eyebrow{
+  font-family:'Inconsolata',monospace;
+  font-size:10.5px;letter-spacing:.42em;
+  text-transform:uppercase;color:var(--rust);
+}
+.tag{
+  display:inline-block;
+  font-family:'Inconsolata',monospace;
+  font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;
+  padding:4px 11px;border:1px solid var(--moss);color:var(--moss);
+  border-radius:2px;line-height:1.6;
+}
+.tag.gold{border-color:var(--gold);color:var(--gold)}
+.tag.rust{border-color:var(--rust);color:var(--rust)}
+.tag.white{border-color:rgba(255,255,255,.45);color:rgba(255,255,255,.8)}
+
+/* ══════════════════════════════════════════
+   LAYOUT
+══════════════════════════════════════════ */
+.container{max-width:960px;margin:0 auto;padding:0 40px}
+
+/* ══════════════════════════════════════════
+   HERO / COVER
+══════════════════════════════════════════ */
+.hero{
+  min-height:100vh;
+  background:var(--forest);
+  display:grid;
+  grid-template-columns:1.15fr 1fr;
+  position:relative;
+  overflow:hidden;
+}
+
+/* Organic texture overlay */
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 600px 400px at 20% 80%, rgba(62,107,82,.45) 0%, transparent 70%),
+    radial-gradient(ellipse 400px 600px at 90% 10%, rgba(196,154,60,.12) 0%, transparent 65%);
+  pointer-events:none;
+}
+
+/* Large background text */
+.hero-bg-text{
+  position:absolute;
+  bottom:-30px;right:-40px;
+  font-family:'Cormorant Garamond',serif;
+  font-size:240px;font-weight:700;
+  color:rgba(255,255,255,.025);
+  line-height:1;letter-spacing:-.02em;
+  pointer-events:none;user-select:none;
+  white-space:nowrap;
+}
+
+.hero-left{
+  padding:70px 60px 70px 70px;
+  display:flex;flex-direction:column;
+  justify-content:space-between;
+  z-index:2;
+}
+
+.hero-logo{
+  font-family:'Inconsolata',monospace;
+  font-size:10px;letter-spacing:.38em;
+  color:rgba(226,168,75,.7);text-transform:uppercase;
+}
+
+.hero-content{flex:1;display:flex;flex-direction:column;justify-content:center;padding:50px 0}
+
+.hero-label{
+  display:flex;align-items:center;gap:14px;
+  font-family:'Inconsolata',monospace;font-size:10px;
+  letter-spacing:.38em;color:var(--fern);text-transform:uppercase;
+  margin-bottom:22px;
+}
+.hero-label::before{content:'';width:32px;height:1px;background:var(--fern)}
+
+.hero-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:54px;font-weight:700;color:var(--parchment);
+  line-height:1.06;margin-bottom:6px;
+}
+.hero-name em{color:var(--amber);font-style:italic}
+
+.hero-degree{
+  font-family:'Inconsolata',monospace;font-size:11px;
+  letter-spacing:.22em;color:rgba(226,168,75,.65);
+  margin-bottom:24px;
+}
+
+.hero-tagline{
+  font-size:14.5px;color:rgba(232,239,233,.72);
+  max-width:380px;line-height:1.9;font-style:italic;
+  font-family:'Cormorant Garamond',serif;font-size:18px;
+  border-left:2px solid var(--gold);padding-left:18px;
+}
+
+.hero-contact{
+  display:flex;flex-direction:column;gap:9px;
+}
+.hero-contact-row{
+  display:flex;align-items:center;gap:12px;
+  font-family:'Inconsolata',monospace;font-size:11px;
+  color:rgba(232,239,233,.58);letter-spacing:.1em;
+}
+.hero-contact-row span{color:var(--amber);margin-right:4px}
+
+/* RIGHT PANEL */
+.hero-right{
+  background:var(--moss);
+  display:flex;flex-direction:column;
+  justify-content:center;
+  padding:70px 55px;
+  position:relative;overflow:hidden;
+  z-index:2;
+}
+.hero-right::before{
+  content:'';position:absolute;top:-100px;right:-80px;
+  width:350px;height:350px;border-radius:50%;
+  border:1px solid rgba(255,255,255,.08);
+}
+.hero-right::after{
+  content:'';position:absolute;bottom:-60px;left:-60px;
+  width:200px;height:200px;border-radius:50%;
+  border:1px solid rgba(255,255,255,.06);
+}
+
+.hero-right-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:13px;font-weight:600;letter-spacing:.3em;
+  text-transform:uppercase;color:rgba(255,255,255,.5);
+  margin-bottom:36px;
+}
+
+.pillar{
+  margin-bottom:28px;
+}
+.pillar:last-child{margin-bottom:0}
+
+.pillar-head{
+  display:flex;justify-content:space-between;align-items:baseline;
+  margin-bottom:9px;
+}
+.pillar-name{
+  font-size:13px;font-weight:500;color:var(--parchment);letter-spacing:.04em;
+}
+.pillar-pct{
+  font-family:'Inconsolata',monospace;font-size:14px;
+  color:var(--amber);font-weight:500;
+}
+.pillar-track{
+  height:3px;background:rgba(255,255,255,.12);border-radius:2px;overflow:hidden;
+}
+.pillar-fill{
+  height:100%;background:linear-gradient(90deg,var(--gold),var(--amber));
+  border-radius:2px;width:0;
+  animation:fillBar 1.6s cubic-bezier(.22,1,.36,1) forwards;
+}
+@keyframes fillBar{to{width:var(--w)}}
+
+.pillar-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+
+.hero-divider{
+  height:1px;background:rgba(255,255,255,.12);
+  margin:32px 0;
+}
+
+.hero-stat{
+  display:flex;gap:30px;
+}
+.stat-item{text-align:center}
+.stat-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:38px;font-weight:700;color:var(--amber);
+  line-height:1;
+}
+.stat-label{
+  font-family:'Inconsolata',monospace;font-size:9px;
+  letter-spacing:.28em;text-transform:uppercase;
+  color:rgba(255,255,255,.45);margin-top:4px;
+}
+
+/* ══════════════════════════════════════════
+   NAV STRIP
+══════════════════════════════════════════ */
+.nav-strip{
+  background:var(--forest);
+  border-top:1px solid rgba(255,255,255,.06);
+  padding:0 70px;
+  display:flex;gap:0;
+  position:sticky;top:0;z-index:50;
+}
+.nav-item{
+  font-family:'Inconsolata',monospace;font-size:10.5px;
+  letter-spacing:.3em;text-transform:uppercase;
+  color:rgba(255,255,255,.4);padding:17px 22px;
+  border-bottom:2px solid transparent;
+  transition:color .2s,border-color .2s;
+  cursor:pointer;
+}
+.nav-item:hover,.nav-item.active{
+  color:var(--amber);border-bottom-color:var(--amber);
+}
+
+/* ══════════════════════════════════════════
+   SECTIONS COMMON
+══════════════════════════════════════════ */
+.section{padding:90px 0}
+.section.alt{background:var(--cream)}
+.section.dark{background:var(--forest)}
+.section.mist{background:var(--mist)}
+
+.section-intro{
+  display:grid;grid-template-columns:auto 1fr;
+  gap:0 28px;align-items:flex-end;
+  margin-bottom:56px;
+}
+.section-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:96px;font-weight:700;
+  color:rgba(30,58,47,.1);line-height:1;
+  padding-bottom:4px;
+}
+.section.dark .section-num{color:rgba(255,255,255,.07)}
+.section-meta{}
+.section-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:36px;font-weight:700;color:var(--forest);
+  line-height:1.15;
+}
+.section.dark .section-title{color:var(--parchment)}
+.section-subtitle{
+  font-size:13px;color:rgba(28,28,26,.5);margin-top:5px;letter-spacing:.02em;
+}
+.section.dark .section-subtitle{color:rgba(232,239,233,.45)}
+
+/* ══════════════════════════════════════════
+   CARD SYSTEM
+══════════════════════════════════════════ */
+.cards-2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.card{
+  background:var(--white);
+  border:1px solid rgba(30,58,47,.1);
+  border-radius:3px;overflow:hidden;
+  transition:transform .3s ease,box-shadow .3s ease;
+}
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 24px 56px rgba(30,58,47,.12);
+}
+
+.card-header{
+  padding:30px 30px 24px;
+  position:relative;overflow:hidden;
+}
+.card-header.forest{background:var(--forest)}
+.card-header.moss{background:var(--moss)}
+.card-header.rust{background:var(--rust)}
+.card-header.gold{background:linear-gradient(135deg,#8B6914,#C49A3C)}
+
+.card-header::after{
+  content:'';position:absolute;bottom:-40px;right:-40px;
+  width:120px;height:120px;border-radius:50%;
+  border:1px solid rgba(255,255,255,.08);pointer-events:none;
+}
+
+.card-num{
+  font-family:'Inconsolata',monospace;font-size:9.5px;
+  letter-spacing:.38em;text-transform:uppercase;
+  color:var(--amber);margin-bottom:10px;
+}
+.card-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:19px;font-weight:700;color:var(--white);
+  line-height:1.3;
+}
+
+.card-body{padding:28px 30px}
+
+.star-row{margin-bottom:13px}
+.star-row:last-of-type{margin-bottom:20px}
+.star-key{
+  font-family:'Inconsolata',monospace;font-size:9.5px;
+  letter-spacing:.28em;text-transform:uppercase;
+  color:var(--forest);margin-bottom:4px;font-weight:500;
+}
+.star-val{font-size:13.5px;color:#505050;line-height:1.75}
+
+.tags-row{display:flex;flex-wrap:wrap;gap:7px;margin-top:6px}
+
+/* ══════════════════════════════════════════
+   VISUAL SECTION
+══════════════════════════════════════════ */
+.visual-cards{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+
+.visual-card{
+  border:1px solid rgba(30,58,47,.12);
+  border-radius:3px;overflow:hidden;
+  transition:transform .3s,box-shadow .3s;
+}
+.visual-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 20px 50px rgba(30,58,47,.1);
+}
+
+.visual-thumb{
+  height:190px;display:flex;align-items:center;
+  justify-content:center;position:relative;overflow:hidden;
+}
+.visual-thumb.green{
+  background:linear-gradient(135deg,#1A3A2A 0%,#2E6B4A 45%,#4A9B6A 100%);
+}
+.visual-thumb.teal{
+  background:linear-gradient(135deg,#13404B 0%,#1E6B7A 50%,#38909E 100%);
+}
+.visual-thumb-inner{text-align:center;z-index:1}
+.visual-thumb-icon{font-size:46px;display:block;margin-bottom:10px;filter:drop-shadow(0 4px 10px rgba(0,0,0,.3))}
+.visual-thumb-label{
+  font-family:'Inconsolata',monospace;font-size:9.5px;
+  letter-spacing:.25em;text-transform:uppercase;
+  color:rgba(255,255,255,.6);
+}
+/* Decorative circles on thumb */
+.visual-thumb::before{
+  content:'';position:absolute;
+  width:200px;height:200px;border-radius:50%;
+  border:1px solid rgba(255,255,255,.07);
+  top:-60px;right:-60px;
+}
+
+.visual-body{background:var(--white);padding:26px 28px}
+.visual-context{
+  font-family:'Inconsolata',monospace;font-size:9.5px;
+  letter-spacing:.3em;text-transform:uppercase;
+  color:var(--rust);margin-bottom:8px;
+}
+.visual-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:18px;font-weight:700;color:var(--forest);
+  margin-bottom:10px;line-height:1.3;
+}
+.visual-desc{font-size:13px;color:#5A5A5A;line-height:1.75}
+
+/* APPROACH NOTE */
+.approach-note{
+  background:var(--forest);
+  border:1px solid rgba(196,154,60,.2);
+  border-radius:3px;
+  padding:30px 32px;
+  margin-top:22px;
+  display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;
+}
+.approach-icon{
+  font-size:32px;
+  width:56px;height:56px;
+  background:rgba(255,255,255,.05);
+  border-radius:2px;display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.approach-text{font-size:13.5px;color:rgba(232,239,233,.75);line-height:1.85}
+.approach-text strong{color:var(--amber)}
+
+/* ══════════════════════════════════════════
+   RESEARCH SECTION (dark)
+══════════════════════════════════════════ */
+.research-card{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(196,154,60,.18);
+  border-radius:3px;padding:36px;
+  margin-bottom:20px;
+}
+.research-label{
+  font-family:'Inconsolata',monospace;font-size:9.5px;
+  letter-spacing:.38em;text-transform:uppercase;
+  color:var(--amber);margin-bottom:12px;
+}
+.research-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:20px;font-style:italic;font-weight:600;
+  color:var(--parchment);line-height:1.45;margin-bottom:16px;
+}
+.research-body{font-size:13.5px;color:rgba(212,221,213,.75);line-height:1.85}
+.research-body strong{color:var(--amber)}
+
+/* STAR GRID */
+.star-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  margin-top:28px;
+  border:1px solid rgba(196,154,60,.15);
+  border-radius:3px;overflow:hidden;
+}
+.star-cell{
+  background:rgba(255,255,255,.03);
+  padding:22px 18px;
+  border-right:1px solid rgba(196,154,60,.1);
+}
+.star-cell:last-child{border-right:none}
+.star-letter{
+  font-family:'Cormorant Garamond',serif;
+  font-size:36px;font-weight:700;color:var(--amber);
+  line-height:1;margin-bottom:4px;
+}
+.star-word{
+  font-family:'Inconsolata',monospace;font-size:8.5px;
+  letter-spacing:.32em;text-transform:uppercase;
+  color:var(--fern);margin-bottom:10px;
+}
+.star-text{font-size:12px;color:rgba(212,221,213,.58);line-height:1.65}
+
+/* RELEVANCE BOX */
+.relevance-box{
+  background:rgba(196,154,60,.08);
+  border-left:3px solid var(--gold);
+  padding:20px 24px;margin-top:18px;
+  border-radius:0 3px 3px 0;
+}
+.relevance-label{
+  font-family:'Inconsolata',monospace;font-size:9.5px;
+  letter-spacing:.3em;text-transform:uppercase;
+  color:var(--amber);margin-bottom:8px;
+}
+.relevance-text{font-size:13px;color:rgba(232,239,233,.7);line-height:1.8}
+
+/* ══════════════════════════════════════════
+   ACHIEVEMENTS (mist)
+══════════════════════════════════════════ */
+.achievement-list{display:flex;flex-direction:column;gap:0}
+.achievement-item{
+  display:grid;grid-template-columns:64px 1fr auto;
+  gap:24px;align-items:center;
+  padding:26px 0;
+  border-bottom:1px solid rgba(30,58,47,.1);
+  transition:background .2s;
+}
+.achievement-item:last-child{border-bottom:none}
+.achievement-item:hover{background:rgba(30,58,47,.03);padding-left:10px;padding-right:10px;margin:0 -10px;border-radius:3px}
+
+.ach-icon{
+  width:56px;height:56px;
+  background:var(--forest);
+  border-radius:3px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:24px;flex-shrink:0;
+}
+.ach-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:18px;font-weight:700;color:var(--forest);
+  margin-bottom:3px;
+}
+.ach-desc{font-size:13px;color:#6A6A60;line-height:1.65}
+.ach-year{
+  font-family:'Inconsolata',monospace;font-size:11px;
+  color:var(--gold);letter-spacing:.12em;
+  flex-shrink:0;align-self:flex-start;padding-top:4px;
+}
+
+/* ══════════════════════════════════════════
+   SKILLS GRID
+══════════════════════════════════════════ */
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.skill-card{
+  background:var(--white);
+  border:1px solid rgba(30,58,47,.1);
+  border-radius:3px;padding:24px;
+  transition:transform .2s,box-shadow .2s;
+}
+.skill-card:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(30,58,47,.08)}
+.skill-icon{font-size:28px;margin-bottom:12px}
+.skill-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:16px;font-weight:700;color:var(--forest);
+  margin-bottom:6px;
+}
+.skill-desc{font-size:12.5px;color:#6A6A60;line-height:1.7}
+
+/* ══════════════════════════════════════════
+   CTA
+══════════════════════════════════════════ */
+.cta{
+  background:var(--rust);
+  padding:80px 0;text-align:center;
+  position:relative;overflow:hidden;
+}
+.cta::before{
+  content:'';position:absolute;top:-120px;left:50%;
+  transform:translateX(-50%);
+  width:600px;height:600px;border-radius:50%;
+  border:1px solid rgba(255,255,255,.07);
+  pointer-events:none;
+}
+.cta-inner{max-width:580px;margin:0 auto;padding:0 40px;position:relative;z-index:1}
+.cta-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:44px;font-weight:700;color:var(--white);
+  line-height:1.15;margin-bottom:18px;
+}
+.cta-title em{color:var(--amber);font-style:italic}
+.cta-sub{font-size:14.5px;color:rgba(255,255,255,.75);line-height:1.85;margin-bottom:38px}
+.cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+
+.btn{
+  display:inline-block;
+  font-family:'Inconsolata',monospace;font-size:11px;
+  letter-spacing:.28em;text-transform:uppercase;
+  padding:15px 34px;border-radius:2px;
+  cursor:pointer;border:none;
+  transition:transform .2s,box-shadow .2s,background .2s;
+}
+.btn:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,.25)}
+.btn-primary{
+  background:var(--forest);color:var(--amber);
+}
+.btn-secondary{
+  background:transparent;color:var(--white);
+  border:1px solid rgba(255,255,255,.45);
+}
+.btn-secondary:hover{border-color:var(--white)}
+
+/* ══════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════ */
+footer{
+  background:#111410;
+  padding:32px 70px;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.footer-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:15px;color:rgba(248,244,238,.5);
+}
+.footer-copy{
+  font-family:'Inconsolata',monospace;font-size:10px;
+  color:rgba(248,244,238,.25);letter-spacing:.2em;
+}
+
+/* ══════════════════════════════════════════
+   ENTRANCE ANIMATIONS
+══════════════════════════════════════════ */
+.fade-up{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════ */
+@media(max-width:780px){
+  .hero{grid-template-columns:1fr}
+  .hero-right{padding:50px 40px}
+  .hero-left{padding:50px 40px}
+  .hero-name{font-size:38px}
+  .cards-2,.visual-cards{grid-template-columns:1fr}
+  .skills-grid{grid-template-columns:1fr 1fr}
+  .star-grid{grid-template-columns:1fr 1fr}
+  .container{padding:0 24px}
+  .nav-strip{padding:0 24px;overflow-x:auto}
+  .achievement-item{grid-template-columns:50px 1fr}
+  .ach-year{display:none}
+  footer{flex-direction:column;gap:10px;text-align:center;padding:24px}
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     HERO
+══════════════════════════════════════════ -->
+<section class="hero" id="home">
+  <div class="hero-bg-text">WASRY</div>
+
+  <!-- LEFT -->
+  <div class="hero-left">
+    <div class="hero-logo">Portfolio · DEEP EnGender · YILA Program Officer</div>
+
+    <div class="hero-content">
+      <div class="hero-label">Program · Design · Research</div>
+
+      <h1 class="hero-name serif">
+        Wasry<br>
+        <em>Rusianti</em><br>
+        Nomira Silla
+      </h1>
+      <p class="hero-degree mono">S.K.H. &nbsp;·&nbsp; Universitas Nusa Cendana &nbsp;·&nbsp; Lulusan Terbaik 2025</p>
+
+      <blockquote class="hero-tagline serif">
+        Sarjana Kedokteran Hewan dengan keahlian riset, koordinasi program, dan komunikasi visual — siap membawa perspektif <em>One Health</em> ke dalam ekosistem YILA Academy.
+      </blockquote>
+    </div>
+
+    <div class="hero-contact">
+      <div class="hero-contact-row">
+        <span>✉</span>
+        <span class="mono">wasrirusyati@gmail.com</span>
+      </div>
+      <div class="hero-contact-row">
+        <span>📱</span>
+        <span class="mono">+62 812-9783-3624</span>
+      </div>
+      <div class="hero-contact-row">
+        <span>📍</span>
+        <span class="mono">Kota Soe, Kab. Timor Tengah Selatan, NTT</span>
+      </div>
+      <div class="hero-contact-row" style="margin-top:4px">
+        <span class="tag white">Full-time · Remote Ready</span>
+        <span class="tag white" style="margin-left:6px">IPK 3.77 / 4.00</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="hero-right">
+    <p class="hero-right-title mono">Komposisi Kompetensi — Posisi YILA</p>
+
+    <!-- PILLAR 1 -->
+    <div class="pillar">
+      <div class="pillar-head">
+        <span class="pillar-name">Koordinasi Program</span>
+        <span class="pillar-pct mono">35%</span>
+      </div>
+      <div class="pillar-track">
+        <div class="pillar-fill" style="--w:35%;animation-delay:.2s"></div>
+      </div>
+      <div class="pillar-tags">
+        <span class="tag white">Manajemen Jadwal</span>
+        <span class="tag white">Komunikasi Multi-pihak</span>
+        <span class="tag white">Remote Coordination</span>
+      </div>
+    </div>
+
+    <!-- PILLAR 2 -->
+    <div class="pillar">
+      <div class="pillar-head">
+        <span class="pillar-name">Desain Grafis</span>
+        <span class="pillar-pct mono">35%</span>
+      </div>
+      <div class="pillar-track">
+        <div class="pillar-fill" style="--w:35%;animation-delay:.55s"></div>
+      </div>
+      <div class="pillar-tags">
+        <span class="tag white">Canva</span>
+        <span class="tag white">Infografis Edukasi</span>
+      </div>
+    </div>
+
+    <!-- PILLAR 3 -->
+    <div class="pillar">
+      <div class="pillar-head">
+        <span class="pillar-name">Penulisan Akademik</span>
+        <span class="pillar-pct mono">30%</span>
+      </div>
+      <div class="pillar-track">
+        <div class="pillar-fill" style="--w:30%;animation-delay:.9s"></div>
+      </div>
+      <div class="pillar-tags">
+        <span class="tag white">Literature Review</span>
+        <span class="tag white">Co-authorship</span>
+        <span class="tag white">One Health Research</span>
+      </div>
+    </div>
+
+    <div class="hero-divider"></div>
+
+    <div class="hero-stat">
+      <div class="stat-item">
+        <div class="stat-num serif">3.77</div>
+        <div class="stat-label mono">IPK</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num serif">4+</div>
+        <div class="stat-label mono">Kepanitiaan</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num serif">2</div>
+        <div class="stat-label mono">Asisten Dosen</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num serif">4</div>
+        <div class="stat-label mono">Penghargaan</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NAV STRIP -->
+<nav class="nav-strip">
+  <a href="#koordinasi" class="nav-item active">01 · Koordinasi</a>
+  <a href="#desain" class="nav-item">02 · Desain</a>
+  <a href="#riset" class="nav-item">03 · Riset</a>
+  <a href="#prestasi" class="nav-item">04 · Prestasi</a>
+  <a href="#keahlian" class="nav-item">05 · Keahlian</a>
+</nav>
+
+
+<!-- ══════════════════════════════════════════
+     SECTION 01 — KOORDINASI
+══════════════════════════════════════════ -->
+<section class="section" id="koordinasi">
+  <div class="container">
+
+    <div class="section-intro">
+      <div class="section-num serif">01</div>
+      <div>
+        <p class="eyebrow" style="margin-bottom:6px">Bagian I · Bobot 35%</p>
+        <h2 class="section-title serif">Koordinasi Program<br>&amp; Kepemimpinan</h2>
+        <p class="section-subtitle">Pengalaman nyata mengelola manusia, jadwal, &amp; teknis acara — sesuai kebutuhan YILA Academy</p>
+      </div>
+    </div>
+
+    <div class="cards-2">
+
+      <!-- CARD 1 -->
+      <div class="card fade-up">
+        <div class="card-header forest">
+          <div class="card-num mono">Studi Kasus · 01</div>
+          <div class="card-title serif">Ketua Persekutuan Mahasiswa Kristen &amp; Ketua Div. Kesekretariatan &amp; Humas</div>
+        </div>
+        <div class="card-body">
+          <div class="star-row">
+            <div class="star-key mono">Situation</div>
+            <div class="star-val">Terpilih sebagai Ketua PMK sekaligus Ketua Divisi Kesekretariatan &amp; Humas Kepanitiaan <em>Student Day</em> dan <em>Latihan Dasar Kepemimpinan</em> 2024 di FKKH Undana.</div>
+          </div>
+          <div class="star-row">
+            <div class="star-key mono">Task</div>
+            <div class="star-val">Memimpin koordinasi program rutin organisasi, mengelola komunikasi antar-anggota, serta menangani seluruh korespondensi formal dan penjadwalan kegiatan kepanitiaan.</div>
+          </div>
+          <div class="star-row">
+            <div class="star-key mono">Action</div>
+            <div class="star-val">Menyusun rundown kegiatan, menjadi narahubung utama (Humas) antar pihak internal &amp; eksternal, serta mengkoordinasikan alur teknis pelaksanaan acara secara daring (Zoom/Google Meet) maupun luring.</div>
+          </div>
+          <div class="star-row">
+            <div class="star-key mono">Result</div>
+            <div class="star-val">Program kerja organisasi terlaksana dengan alur komunikasi yang terstruktur dan partisipasi anggota yang konsisten sepanjang periode kepengurusan 2024–2025.</div>
+          </div>
+          <div class="tags-row">
+            <span class="tag">Koordinasi Jadwal</span>
+            <span class="tag">Korespondensi Formal</span>
+            <span class="tag">Event Management</span>
+            <span class="tag">Zoom / Google Meet</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="card fade-up" style="transition-delay:.15s">
+        <div class="card-header moss">
+          <div class="card-num mono">Studi Kasus · 02</div>
+          <div class="card-title serif">Asisten Dosen — Lab. Ilmu Penyakit Dalam Veteriner, Undana</div>
+        </div>
+        <div class="card-body">
+          <div class="star-row">
+            <div class="star-key mono">Situation</div>
+            <div class="star-val">Dipercaya sebagai Asisten Dosen di Laboratorium Ilmu Penyakit Dalam (2024–2025), berinteraksi langsung dengan dosen pengampu, mahasiswa, dan narasumber internal lab.</div>
+          </div>
+          <div class="star-row">
+            <div class="star-key mono">Task</div>
+            <div class="star-val">Mengoordinasikan jadwal praktikum mahasiswa, mempersiapkan materi, dan membangun komunikasi efektif dengan berbagai narasumber internal laboratorium.</div>
+          </div>
+          <div class="star-row">
+            <div class="star-key mono">Action</div>
+            <div class="star-val">Mengelola penjadwalan praktikum, melakukan tinjauan pustaka untuk pembaruan modul, memastikan ketersediaan bahan &amp; alat, serta mendampingi mahasiswa selama sesi praktikum.</div>
+          </div>
+          <div class="star-row">
+            <div class="star-key mono">Result</div>
+            <div class="star-val">Praktikum berjalan tepat waktu; modul panduan diperbarui secara berkala dengan landasan literatur yang kuat — membuktikan kapasitas koordinasi teknis dan kerja mandiri.</div>
+          </div>
+          <div class="tags-row">
+            <span class="tag">Koordinasi Multi-pihak</span>
+            <span class="tag">Manajemen Waktu</span>
+            <span class="tag">Dokumentasi Teknis</span>
+            <span class="tag">Literature Review</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- EXTRA: Anggota Divisi Acara -->
+    <div style="margin-top:22px" class="fade-up">
+      <div class="card" style="border-color:rgba(30,58,47,.15)">
+        <div style="display:grid;grid-template-columns:auto 1fr;gap:0">
+          <div style="background:var(--forest);padding:28px 26px;display:flex;flex-direction:column;justify-content:center;min-width:180px">
+            <div class="card-num mono" style="margin-bottom:8px">Studi Kasus · 03</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:700;color:var(--amber);line-height:1.4">Anggota Divisi Acara<br>Diesnatalis FKKH Undana 2023</div>
+          </div>
+          <div style="padding:26px 28px">
+            <p style="font-size:13.5px;color:#505050;line-height:1.8;margin-bottom:14px">Berpengalaman dalam menyusun kebutuhan teknis dan alur pelaksanaan acara formal di tingkat fakultas. Terlibat langsung pada <em>Diesnatalis</em> Fakultas Kedokteran dan Kedokteran Hewan Undana 2023 — membuktikan kemampuan berkolaborasi dalam struktur kepanitiaan berskala lebih besar.</p>
+            <div class="tags-row">
+              <span class="tag">Alur Teknis Acara</span>
+              <span class="tag">Kerja Tim Lintas Divisi</span>
+              <span class="tag">Acara Formal Fakultas</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     SECTION 02 — DESAIN GRAFIS
+══════════════════════════════════════════ -->
+<style>
+/* ── PROJECT ACCORDION ── */
+.proj-block {
+  border: 1px solid rgba(30,58,47,.13);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 24px;
+  background: var(--white);
+}
+.proj-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 20px;
+  padding: 28px 32px;
+  cursor: pointer;
+  background: var(--forest);
+  transition: background .2s;
+  user-select: none;
+}
+.proj-header:hover { background: #162a20; }
+.proj-header-left {}
+.proj-num {
+  font-family: 'Inconsolata', monospace;
+  font-size: 9.5px; letter-spacing: .38em;
+  text-transform: uppercase; color: var(--amber);
+  margin-bottom: 7px;
+}
+.proj-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; font-weight: 700;
+  color: var(--parchment); line-height: 1.2;
+}
+.proj-ctx {
+  font-size: 12.5px; color: rgba(232,239,233,.55);
+  margin-top: 5px; font-style: italic;
+}
+.proj-meta-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+.proj-toggle {
+  width: 38px; height: 38px;
+  background: rgba(255,255,255,.08);
+  border-radius: 2px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--amber); font-size: 18px;
+  transition: transform .35s, background .2s;
+  flex-shrink: 0;
+}
+.proj-block.open .proj-toggle { transform: rotate(45deg); background: rgba(196,154,60,.2); }
+
+/* POSTER GRID inside accordion */
+.proj-body {
+  max-height: 0; overflow: hidden;
+  transition: max-height .5s cubic-bezier(.4,0,.2,1);
+}
+.proj-block.open .proj-body { max-height: 2000px; }
+
+.poster-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(30,58,47,.08);
+  border-top: 1px solid rgba(30,58,47,.08);
+}
+
+.poster-item {
+  background: var(--white);
+  display: flex; flex-direction: column;
+  transition: background .2s;
+}
+.poster-item:hover { background: #fdfaf5; }
+
+.poster-thumb {
+  width: 100%; aspect-ratio: 4/3;
+  background: var(--cream);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden; position: relative;
+  border-bottom: 1px solid rgba(30,58,47,.07);
+}
+.poster-thumb img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform .4s ease;
+}
+.poster-item:hover .poster-thumb img { transform: scale(1.04); }
+
+/* placeholder when no image */
+.poster-thumb-placeholder {
+  width: 100%; height: 100%;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--cream), #e8e0d0);
+}
+.poster-thumb-placeholder span {
+  font-size: 36px;
+}
+.poster-thumb-placeholder p {
+  font-family: 'Inconsolata', monospace;
+  font-size: 9px; letter-spacing: .25em;
+  text-transform: uppercase; color: rgba(30,58,47,.35);
+}
+
+/* poster number badge */
+.poster-badge {
+  position: absolute; top: 10px; left: 10px;
+  background: var(--forest);
+  color: var(--amber);
+  font-family: 'Inconsolata', monospace;
+  font-size: 9px; letter-spacing: .2em;
+  padding: 3px 9px; border-radius: 1px;
+}
+
+.poster-info { padding: 18px 20px 22px; flex: 1; }
+.poster-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px; font-weight: 700;
+  color: var(--forest); line-height: 1.3;
+  margin-bottom: 8px;
+}
+.poster-desc {
+  font-size: 12px; color: #666;
+  line-height: 1.75;
+}
+.poster-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 12px; }
+.poster-tags .tag { font-size: 8.5px; padding: 3px 8px; }
+
+/* summary bar below grid */
+.proj-summary {
+  padding: 20px 32px;
+  background: var(--cream);
+  border-top: 1px solid rgba(30,58,47,.08);
+  font-size: 13px; color: #5a5a50;
+  line-height: 1.8;
+}
+.proj-summary strong { color: var(--forest); }
+
+@media(max-width:780px){
+  .poster-grid { grid-template-columns: 1fr; }
+  .proj-header { padding: 22px 20px; }
+}
+</style>
+
+<section class="section alt" id="desain">
+  <div class="container">
+
+    <div class="section-intro">
+      <div class="section-num serif">02</div>
+      <div>
+        <p class="eyebrow" style="margin-bottom:6px">Bagian II · Bobot 35%</p>
+        <h2 class="section-title serif">Komunikasi Visual<br>&amp; Desain Grafis</h2>
+        <p class="section-subtitle">Canva · Infografis edukasi inklusif · Kampanye digital · Komunikasi sains</p>
+      </div>
+    </div>
+
+    <!-- ══ PROYEK 1 ══ -->
+    <div class="proj-block open fade-up" id="proj1">
+      <div class="proj-header" onclick="toggleProj('proj1')">
+        <div class="proj-header-left">
+          <div class="proj-num mono">Proyek 01 · 2024 · 3 Karya Visual</div>
+          <div class="proj-name serif">Edukasi Masyarakat Veteriner</div>
+          <div class="proj-ctx">Kampanye Digital — Himpunan Mahasiswa Pendidikan Dokter Hewan, Undana (2024) - Kuliah Kerja Nyata Tematik (2024)</div>
+          <div class="proj-meta-tags">
+            <span class="tag white">Canva</span>
+            <span class="tag white">Edukasi Publik</span>
+            <span class="tag white">Animal Welfare</span>
+            <span class="tag white">Food Safety</span>
+            <span class="tag white">Zoonosis</span>
+          </div>
+        </div>
+        <div class="proj-toggle">+</div>
+      </div>
+
+      <div class="proj-body">
+        <div class="poster-grid">
+
+          <!-- POSTER 1 -->
+          <div class="poster-item">
+            <div class="poster-thumb">
+              <!-- Ganti dengan: <img src="animal-welfare.jpg" alt="Animal Welfare"> -->
+              <img src="POSTER ANIMAL WELFARE.PNG" alt="ANIMAL WELFARE">
+              <div class="poster-badge mono">01</div>
+            </div>
+            <div class="poster-info">
+              <div class="poster-title serif">Animal Welfare<br><em>5 Prinsip Kesejahteraan Hewan</em></div>
+              <p class="poster-desc">Mengembangkan materi komunikasi visual yang edukatif menggunakan Canva untuk menyederhanakan 5 prinsip kesejahteraan hewan. Dirancang dengan pendekatan <em>Komunikasi Inklusif-Edukatif</em> melalui visualisasi karakter yang empatik dan alur informasi yang terstruktur. Dengan menerjemahkan 5 prinsip ilmiah kesejahteraan hewan menjadi panduan praktis yang membumi, poster ini berfungsi sebagai media advokasi preventif untuk membangun kesadaran dan harmoni antara manusia dan hewan di lingkungan domestik.</p>
+              <div class="poster-tags">
+                <span class="tag">Animal Welfare</span>
+                <span class="tag">Komunikasi Inklusif-Edukatif </span>
+                <span class="tag">Positive Peace</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- INFOGRAFIS 2 -->
+          <div class="poster-item">
+            <div class="poster-thumb">
+              <!-- Ganti dengan: <img src="pemotongan-ayam.jpg" alt="Pemotongan Ayam 7M"> -->
+              <img src="KALENDER PENYAKIT ASF KKN.PNG" alt="KELENDER PENYAKIT ASF">
+            </div>
+            <div class="poster-info">
+              <div class="poster-title serif">Kalender Edukatif: Manajemen Pencegahan <em>African Swine Fever</em> (ASF) pada Babi<br><em>Program Penyuluhan Kuliah Kerja Nyata Tematik (2024), didistribusikan langsung kepada komunitas peternak lokal di pedesaan</em></div>
+              <p class="poster-desc">Merancang dan memproduksi instrumen komunikasi visual publik yang mengkaji mitigasi penyakit endemik ASF secara taktis dan sederhana. Kalender ini menerjemahkan protokol biosekuriti laboratorium yang kaku menjadi aksi mandiri yang humanis bagi peternak, seperti pengenalan gejala klinis lewat komparasi visual babi sehat vs babi sakit, jalur penularan, hingga langkah preventif sanitasi. Melalui penyederhanaan sains ini, proyek ini berkontribusi langsung dalam mendukung pilar <em>food sovereignty</em> (kedaulatan pangan) serta melindungi ketahanan ekonomi berbasis kearifan lokal <em>(indigenous practices/wellbeing)</em> masyarakat adat atau lokal dari ancaman krisis pangan akibat wabah ternak.</p>
+              <div class="poster-tags">
+                <span class="tag">Sustainable Impact</span>
+                <span class="tag">Visual Science Communication</span>
+                <span class="tag">Community-Based Advocacy</span>
+                <span class="tag">Food Sovereignty Protection</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- INFOGRAFIS 3 -->
+          <div class="poster-item">
+            <div class="poster-thumb">
+              <!-- Ganti dengan: <img src="higiene-sanitasi.jpg" alt="Higiene Sanitasi"> -->
+              <img src="INFOGRAFIS HIGIENE DAN SANITASI AYAM.PNG" alt="Higiene dan Sanitasi Tempat Pemotongan Ayam">
+              <div class="poster-badge mono">03</div>
+            </div>
+            <div class="poster-info">
+              <div class="poster-title serif">Higiene &amp; Sanitasi Tempat Pemotongan Ayam<br><em>Keamanan Pangan Berkelanjutan</em></div>
+              <p class="poster-desc">Instrumen komunikasi visual berbasis pemenuhan standar kesehatan lingkungan pada fasilitas publik. Menerjemahkan regulasi medis yang kaku menjadi panduan langkah-demi-langkah yang praktis untuk mencegah kontaminasi silang dan penyakit zoonosis. Merefleksikan <em>Komunikasi Inklusif-Edukatif</em> dalam memberdayakan pedagang kecil menuju <em>food sovereignty</em> yang bersih dan adil.</p>
+              <div class="poster-tags">
+                <span class="tag">Sanitasi</span>
+                <span class="tag">Zoonosis Prevention</span>
+                <span class="tag">Food Sovereignty</span>
+                <span class="tag">Environmental Health</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="proj-summary">
+          <strong>Dampak Proyek:</strong> Ketiga karya visual ini dirancang untuk komunitas yang berbeda namun saling terhubung — dari edukasi empati publik terhadap hewan, hingga pemberdayaan pedagang kecil di pasar tradisional dalam menerapkan standar keamanan pangan yang adil dan berkelanjutan. Selaras langsung dengan tema <strong>Health, Wellbeing &amp; Indigenous Practices</strong> dan <strong>Food Sovereignty</strong> DEEP EnGender.
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ══ PROYEK 2 ══ -->
+    <div class="proj-block fade-up" id="proj2" style="transition-delay:.15s">
+      <div class="proj-header" onclick="toggleProj('proj2')">
+        <div class="proj-header-left">
+          <div class="proj-num mono">Proyek 02 · 2023–2024 · 3 Karya Visual</div>
+          <div class="proj-name serif">Kampanye Digital: Komunikasi Sains &amp; Edukasi Kesehatan Hewan</div>
+          <div class="proj-ctx">Proyek Sains Komunikatif — Mata Kuliah Manajemen Kesehatan Hewan dan Ilmu Penyakit Dalam (2023–2024) </div>
+          <div class="proj-meta-tags">
+            <span class="tag white">Canva</span>
+            <span class="tag white">Science Communication</span>
+            <span class="tag white">Manajemen Kesehatan Hewan</span>
+            <span class="tag white">Deteksi Dini Penyakit</span>
+          </div>
+        </div>
+        <div class="proj-toggle">+</div>
+      </div>
+
+      <div class="proj-body">
+        <div class="poster-grid">
+
+          <!-- INFOGRAFIS 1 -->
+          <div class="poster-item">
+            <div class="poster-thumb">
+              <!-- Ganti dengan: <img src="toxocariasis-kucing.jpg" alt="Toxocariasis Kucing"> -->
+              <img src="TOXOCARIASIS.JPG" alt="Toxocariasis Kucing">
+              <div class="poster-badge mono">01</div>
+            </div>
+            <div class="poster-info">
+              <div class="poster-title serif">Toxocariasis pada Kucing<br><em>Zoonosis yang Perlu Diwaspadai</em></div>
+              <p class="poster-desc">Mengintegrasikan keahlian sains veteriner dengan desain grafis mengenai bahaya cacingan (<em>Toxocariasis</em>) yang bersifat zoonosis (menular ke manusia). Dirancang dengan visual yang menarik agar pembaca dapat memahami gejala klinis dan langkah preventif secara mandiri, mendukung terciptanya ekosistem domestik yang sehat (<em>Health and Wellbeing</em>).</p>
+              <div class="poster-tags">
+                <span class="tag">Zoonosis</span>
+                <span class="tag">Health &amp; Wellbeing</span>
+                <span class="tag">Preventif</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- POSTER 2 — Ascites pada Hewan -->
+          <div class="poster-item">
+            <div class="poster-thumb">
+              <!-- Ganti dengan: <img src="nama-file.jpg" alt="Judul Poster"> -->
+              <img src="INFOGRAFIS ASCITES.PNG" alt="Ascites pada Hewan Kecil">
+              <div class="poster-badge mono">02</div>
+            </div>
+            <div class="poster-info">
+          <div class="poster-title serif">Ascites pada Hewan Kecil<br><em>Visualisasi Patofisiologi dan Diagnosis Klinis</em></div>
+              <p class="poster-desc" style="color:#666">Menggabungkan keahlian klinis veteriner dengan komunikasi visual untuk membedah kondisi patologis akumulasi cairan rongga peritoneum (Ascites). Infografis ini dirancang secara sistematis—mulai dari pendekatan diagnosis hingga diferensial diagnosis—guna mempermudah pemahaman mengenai kompleksitas gangguan organ dalam, mendukung literasi kesehatan hewan, serta selaras dengan prinsip <em>Health and Wellbeing.</em></p>
+              <div class="poster-tags">
+                <span class="tag" style="opacity:#666">Diagnosis Klinis</span>
+                <span class="tag" style="opacity:#666">Pathophysiology</span>
+                <span class="tag" style="opacity:#666">Health & Wellbeing</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- POSTER 3 — AZOTURIA EXERTIONAL RHABDOMYOLYSIS -->
+          <div class="poster-item">
+            <div class="poster-thumb">
+              <!-- Ganti dengan: <img src="nama-file.jpg" alt="Judul Poster"> -->
+              <img src="AZOTURIA EXERTIONAL RHABDOMYOLYSIS.PNG" alt="AZOTURIA EXERTIONAL RHABDOMYOLYSIS">
+              </div>
+            <div class="poster-info">
+            <div class="poster-title serif">Azoturia Exertional Rhabdomyolysis<br><em>Edukasi Preventif Sindrom Kram Otot Akibat Over-Exertion</em></div>
+              <p class="poster-desc" style="color:#666">Menyajikan infografis edukatif mengenai kerusakan sel otot akut (Azoturia) pada satwa besar akibat kelelahan dan ketidakseimbangan diet. Karya ini menerjemahkan jalur patogenesis seluler yang rumit (seperti disfungsi pompa ion) ke dalam visual yang aplikatif. Fokus utama desain ini adalah mempromosikan langkah pencegahan dini demi menjaga kesejahteraan hewan <em>(animal welfare)</em> dan ekosistem peternakan yang sehat.</p>
+              <div class="poster-tags">
+                <span class="tag" style="opacity:#666">Client Education</span>
+                <span class="tag" style="opacity:#666">Preventif & Welfare</span>
+                <span class="tag" style="opacity:#666">Patogenesis</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="proj-summary">
+          <strong>Dampak Proyek:</strong> Proyek ini mendapatkan apresiasi tinggi dalam mata kuliah Manajemen Kesehatan Hewan dan Ilmu Penyakit Dalam karena dinilai berhasil mengintegrasikan metodologi sains dengan prinsip desain komunikasi visual yang inklusif, serta meraih nilai A (Sempurna).
+        </div>
+      </div>
+    </div>
+
+
+    <div class="approach-note fade-up" style="margin-top:4px">
+      <div class="approach-icon">💡</div>
+      <p class="approach-text">
+        Setiap karya visual dirancang untuk <strong>tujuan komunikasi yang spesifik</strong> — bukan sekadar estetika. Dari empati terhadap kesejahteraan hewan hingga pemberdayaan pedagang pasar tradisional, seluruh proyek ini mencerminkan kemampuan menciptakan konten inklusif, kontekstual, dan mudah dipahami berbagai kalangan — tepat seperti yang dibutuhkan YILA Academy untuk komunitas yang kurang terwakili.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<script>
+function toggleProj(id) {
+  const block = document.getElementById(id);
+  block.classList.toggle('open');
+}
+</script>
+
+
+<!-- ══════════════════════════════════════════
+     SECTION 03 — RISET & PENULISAN
+══════════════════════════════════════════ -->
+<section class="section dark" id="riset">
+  <div class="container">
+
+    <div class="section-intro">
+      <div class="section-num serif">03</div>
+      <div>
+        <p class="eyebrow" style="margin-bottom:6px;color:var(--amber)">Bagian III · Bobot 30%</p>
+        <h2 class="section-title serif">Penulisan Akademik<br>&amp; Riset</h2>
+        <p class="section-subtitle">Literature review · Analisis data klinis · Potensi co-authorship · One Health</p>
+      </div>
+    </div>
+
+    <!-- SKRIPSI -->
+    <div class="research-card fade-up">
+      <div class="research-label mono">Karya Ilmiah Utama · Skripsi 2025</div>
+      <div class="research-title serif">
+        "Deteksi <em>Toxoplasma gondii</em> pada Kambing dan Identifikasi Faktor Risiko pada Manajemen Peternakan Kambing di Kota Kupang"
+      </div>
+      <p class="research-body">
+        Penelitian ini menggabungkan <strong>riset lapangan</strong>, pengambilan sampel klinis, dan <strong>tinjauan pustaka mendalam</strong> mengenai penyakit zoonosis serta faktor risikonya di lingkungan peternakan. Pendekatan <em>One Health</em> yang menghubungkan kesehatan hewan, manusia, dan lingkungan secara langsung bersinggungan dengan tema-tema penelitian DEEP EnGender, khususnya:
+      </p>
+
+      <div class="relevance-box">
+        <div class="relevance-label mono">Relevansi Langsung dengan Tema DEEP EnGender</div>
+        <div class="relevance-text">
+          ▸ <strong>Health, Wellbeing &amp; Indigenous Practices</strong> — Zoonosis pada komunitas peternak lokal NTT<br>
+          ▸ <strong>Climate–Peace–Security Nexus</strong> — Perubahan iklim, ketahanan pangan ternak, dan kerentanan komunitas<br>
+          ▸ <strong>Food Sovereignty &amp; Environmental Justice</strong> — Manajemen peternakan yang adil dan berkelanjutan<br>
+          ▸ <strong>Indigenous Knowledge &amp; Sustainability</strong> — Konteks kearifan lokal peternak di NTT
+        </div>
+      </div>
+
+      <!-- STAR GRID -->
+      <div class="star-grid">
+        <div class="star-cell">
+          <div class="star-letter serif">S</div>
+          <div class="star-word mono">Situation</div>
+          <div class="star-text">Minimnya data epidemiologi lokal terkait <em>Toxoplasma gondii</em> pada peternakan kambing di Kota Kupang, NTT</div>
+        </div>
+        <div class="star-cell">
+          <div class="star-letter serif">T</div>
+          <div class="star-word mono">Task</div>
+          <div class="star-text">Mendeteksi keberadaan <em>Toxoplasma gondii</em> dan mengidentifikasi faktor risiko spesifik pada praktik manajemen peternakan</div>
+        </div>
+        <div class="star-cell">
+          <div class="star-letter serif">A</div>
+          <div class="star-word mono">Action</div>
+          <div class="star-text">Riset lapangan, pengambilan sampel, analisis data klinis, serta literature review komprehensif secara mandiri</div>
+        </div>
+        <div class="star-cell">
+          <div class="star-letter serif">R</div>
+          <div class="star-word mono">Result</div>
+          <div class="star-text">Karya ilmiah berkualitas akademik yang berkontribusi pada basis pengetahuan One Health di wilayah NTT</div>
+        </div>
+      </div>
+
+      <div style="margin-top:26px;display:flex;gap:12px;flex-wrap:wrap">
+        <a href="https://drive.google.com/file/d/1qPWdNTUtQ-3_vOd3u9eLqbPAhQd9cjSo/view?pli=1" target="_blank" class="btn btn-primary">▸ Akses Dokumen Skripsi Lengkap</a>
+      </div>
+    </div>
+
+    <!-- MODUL & DEBAT -->
+    <div class="research-card fade-up" style="margin-top:20px">
+      <div class="research-label mono">Pengalaman Penulisan Lain</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px">
+        <div>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;color:var(--parchment);margin-bottom:10px">Penyusunan Modul Praktikum</p>
+          <p class="research-body">Melakukan tinjauan pustaka secara berkala untuk memperbarui modul praktikum ilmiah sebagai Asisten Dosen — membuktikan kemampuan mensintesis literatur ilmiah menjadi materi yang dapat digunakan secara praktis dan pedagogis.</p>
+        </div>
+        <div>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;color:var(--parchment);margin-bottom:10px">Juara 2 Kompetisi Debat Mahasiswa Indonesia</p>
+          <p class="research-body">Prestasi di tingkat Prodi Kedokteran Hewan, FKKH Undana (2024) — membuktikan kemampuan berpikir kritis, argumentasi berbasis bukti, dan komunikasi publik yang terukur. Kompetensi ini mendukung kapasitas penulisan &amp; co-authorship.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     SECTION 04 — PRESTASI
+══════════════════════════════════════════ -->
+<section class="section mist" id="prestasi">
+  <div class="container">
+
+    <div class="section-intro">
+      <div class="section-num serif" style="color:rgba(30,58,47,.08)">04</div>
+      <div>
+        <p class="eyebrow" style="margin-bottom:6px">Penghargaan &amp; Rekam Jejak</p>
+        <h2 class="section-title serif">Pencapaian Terpilih</h2>
+        <p class="section-subtitle">Bukti nyata keunggulan akademik, kepemimpinan, dan kreativitas</p>
+      </div>
+    </div>
+
+    <div class="achievement-list">
+
+      <div class="achievement-item fade-up">
+        <div class="ach-icon">🏆</div>
+        <div>
+          <div class="ach-title serif">Lulusan Terbaik Wisuda Periode IV</div>
+          <p class="ach-desc">Universitas Nusa Cendana Kupang — IPK 3,77/4,00. Predikat ini mencerminkan komitmen terhadap keunggulan akademik, kedisiplinan tinggi, dan kualitas riset yang konsisten selama 4 tahun studi.</p>
+        </div>
+        <div class="ach-year mono">2025</div>
+      </div>
+
+      <div class="achievement-item fade-up">
+        <div class="ach-icon">🥈</div>
+        <div>
+          <div class="ach-title serif">Juara 2 — Kompetisi Debat Mahasiswa Indonesia</div>
+          <p class="ach-desc">Prodi Kedokteran Hewan, FKKH, Undana. Membuktikan kemampuan berpikir analitis-kritis, argumentasi berbasis data, dan komunikasi publik yang efektif dalam forum kompetitif akademik.</p>
+        </div>
+        <div class="ach-year mono">2024</div>
+      </div>
+
+      <div class="achievement-item fade-up">
+        <div class="ach-icon">🎵</div>
+        <div>
+          <div class="ach-title serif">Juara 2 — Lomba Cipta Mars FKKH Undana</div>
+          <p class="ach-desc">Menunjukkan dimensi kreatif yang melampaui bidang sains — kemampuan menciptakan karya orisinal yang berdampak pada komunitas akademik, relevan untuk peran komunikasi visual dan storytelling.</p>
+        </div>
+        <div class="ach-year mono">2022</div>
+      </div>
+
+      <div class="achievement-item fade-up">
+        <div class="ach-icon">🎤</div>
+        <div>
+          <div class="ach-title serif">Juara 1 — Lomba Musikalisasi Puisi, Tingkat Fakultas</div>
+          <p class="ach-desc">Fakultas Kedokteran Hewan, Undana. Prestasi kreatif yang mencerminkan kepekaan terhadap ekspresi budaya, storytelling, dan kemampuan tampil di hadapan publik — relevan dengan misi YILA Academy dalam pendidikan inklusif.</p>
+        </div>
+        <div class="ach-year mono">2022</div>
+      </div>
+
+      <div class="achievement-item fade-up">
+        <div class="ach-icon">🔬</div>
+        <div>
+          <div class="ach-title serif">Asisten Dosen — Laboratorium Ilmu Penyakit Dalam Veteriner</div>
+          <p class="ach-desc">Dipercaya oleh institusi untuk mendampingi pembelajaran di laboratorium (2024–2025). Membuktikan kepercayaan institusional, kapabilitas teknis, serta kemampuan koordinasi dan komunikasi pedagogis.</p>
+        </div>
+        <div class="ach-year mono">2024–2025</div>
+      </div>
+
+      <div class="achievement-item fade-up">
+        <div class="ach-icon">🌱</div>
+        <div>
+          <div class="ach-title serif">Magang — Dinas Peternakan &amp; Kesehatan Hewan, Kab. TTS</div>
+          <p class="ach-desc">Praktik lapangan langsung: vaksinasi, inseminasi buatan, pendataan ternak, penyaluran bantuan, edukasi masyarakat, dan pemeriksaan hewan di RPH. Pengalaman lapangan di komunitas pedesaan NTT.</p>
+        </div>
+        <div class="ach-year mono">2023</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     SECTION 05 — KEAHLIAN
+══════════════════════════════════════════ -->
+<section class="section" id="keahlian">
+  <div class="container">
+
+    <div class="section-intro">
+      <div class="section-num serif">05</div>
+      <div>
+        <p class="eyebrow" style="margin-bottom:6px">Kompetensi</p>
+        <h2 class="section-title serif">Keahlian &amp; Alat Kerja</h2>
+        <p class="section-subtitle">Rangkuman kemampuan teknis dan interpersonal yang siap diterapkan</p>
+      </div>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-card fade-up">
+        <div class="skill-icon">✍️</div>
+        <div class="skill-name serif">Academic Writing &amp; Literature Review</div>
+        <p class="skill-desc">Terbiasa melakukan tinjauan pustaka mendalam, penyusunan karya ilmiah, dan analisis data klinis dari pengalaman skripsi dan asisten dosen.</p>
+      </div>
+      <div class="skill-card fade-up" style="transition-delay:.1s">
+        <div class="skill-icon">🎨</div>
+        <div class="skill-name serif">Desain Visual (Canva)</div>
+        <p class="skill-desc">Berpengalaman membuat poster, infografis edukasi, materi media sosial, dan sertifikat untuk keperluan organisasi dan pengabdian masyarakat.</p>
+      </div>
+      <div class="skill-card fade-up" style="transition-delay:.2s">
+        <div class="skill-icon">📋</div>
+        <div class="skill-name serif">Koordinasi Program &amp; Administrasi</div>
+        <p class="skill-desc">Ms. Office, pengelolaan korespondensi formal, penyusunan jadwal, dan koordinasi multi-pihak dalam struktur kepanitiaan dan organisasi.</p>
+      </div>
+      <div class="skill-card fade-up" style="transition-delay:.3s">
+        <div class="skill-icon">💻</div>
+        <div class="skill-name serif">Ruang Belajar Daring</div>
+        <p class="skill-desc">Terampil mengelola kegiatan daring via Zoom dan Google Meet. Siap bekerja remote secara mandiri, disiplin, dan responsif.</p>
+      </div>
+      <div class="skill-card fade-up" style="transition-delay:.4s">
+        <div class="skill-icon">🗣️</div>
+        <div class="skill-name serif">Komunikasi Publik &amp; Edukasi</div>
+        <p class="skill-desc">Pengalaman edukasi masyarakat langsung di lapangan (NTT), debat akademik, dan presentasi publik. Bahasa Indonesia aktif; Bahasa Inggris untuk riset literatur.</p>
+      </div>
+      <div class="skill-card fade-up" style="transition-delay:.5s">
+        <div class="skill-icon">🔬</div>
+        <div class="skill-name serif">Riset Lapangan &amp; Diagnostik</div>
+        <p class="skill-desc">Pengalaman riset lapangan di NTT, analisis laboratorium, dan diagnostik veteriner — fondasi untuk penulisan akademik berbasis bukti empiris.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     CTA
+══════════════════════════════════════════ -->
+<section class="cta">
+  <div class="cta-inner">
+    <p class="eyebrow" style="color:rgba(255,255,255,.55);margin-bottom:16px">Mari Berkolaborasi</p>
+    <h2 class="cta-title serif">Siap Berkontribusi untuk<br><em>YILA Academy</em></h2>
+    <p class="cta-sub">
+      Kombinasi latar belakang riset ilmiah, kepemimpinan organisasi, kreativitas visual, dan kepedulian mendalam terhadap isu kesehatan komunitas &amp; lingkungan — siap diarahkan penuh untuk mendukung misi DEEP EnGender dalam memberdayakan generasi muda yang inklusif dan transformatif.
+    </p>
+    <div class="cta-btns">
+      <a href="mailto:wasrirusyati@gmail.com" class="btn btn-primary">✉ Hubungi via Email</a>
+      <a href="tel:+6281297833624" class="btn btn-secondary">📱 +62 812-9783-3624</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-name serif">Wasry Rusianti Nomira Silla, S.K.H.</div>
+  <div class="footer-copy mono">YILA Program Officer Application · DEEP EnGender · 2026</div>
+</footer>
+
+
+<script>
+// Intersection Observer for fade-up
+const els = document.querySelectorAll('.fade-up');
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible') });
+}, { threshold: 0.12 });
+els.forEach(el => obs.observe(el));
+
+// Active nav on scroll
+const sections = ['koordinasi','desain','riset','prestasi','keahlian'];
+const navItems = document.querySelectorAll('.nav-item');
+window.addEventListener('scroll', () => {
+  let cur = '';
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if(el && window.scrollY >= el.offsetTop - 120) cur = id;
+  });
+  navItems.forEach(item => {
+    item.classList.toggle('active', item.getAttribute('href') === '#'+cur);
+  });
+});
+</script>
+</body>
+</html>
